@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
-import ImageUploading from "react-images-uploading";
+import ImageUploading, { ImageListType } from "react-images-uploading";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
@@ -11,18 +11,18 @@ const MainHero = () => {
   const bugun = new Date();
   const fixedDate = new Date('2021-12-15');
 
-  const [images, setImages] = useState();
+  const [images, setImages] = useState([]);
   const [modal, setModal] = useState(false);
   const [modal2, setModal2] = useState(false);
   const [loading, setLoading] = useState(false);
   const maxNumber = 1;
 
   const onChange = (
-    imageList: React.SetStateAction<undefined>,
-    // addUpdateIndex: any
+    imageList: ImageListType,
+    addUpdateIndex: number[] | undefined
   ) => {
     // data for submit
-    setImages(imageList);
+    setImages(imageList as never[]);
     if (imageList && imageList.length > 0) {
       setTimeout(() => {
         setLoading(true);
