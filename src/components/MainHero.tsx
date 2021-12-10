@@ -19,12 +19,11 @@ const MainHero = () => {
 
   const onChange = (
     imageList: React.SetStateAction<undefined>,
-    addUpdateIndex: any
+    // addUpdateIndex: any
   ) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
     setImages(imageList);
-    if (imageList.length > 0) {
+    if (imageList && imageList.length > 0) {
       setTimeout(() => {
         setLoading(true);
       }, 1000);
