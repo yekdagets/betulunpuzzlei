@@ -19,7 +19,6 @@ const MainHero = () => {
 
   const onChange = (
     imageList: ImageListType,
-    addUpdateIndex: number[] | undefined
   ) => {
     // data for submit
     setImages(imageList as never[]);
