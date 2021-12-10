@@ -1,10 +1,8 @@
 import React from 'react';
-import ReactPlayer from 'react-player'
-import { Button } from 'reactstrap';
+import ReactPlayer from 'react-player';
 
 import config from '../config/index.json';
 import Divider from './Divider';
-import Player from './Player';
 
 const Product = () => {
   const { product } = config;
